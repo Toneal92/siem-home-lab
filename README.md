@@ -17,6 +17,13 @@ professional incident reports following SOC standards.
 ---
 
 ## Lab Architecture
+Windows 10 VM (Sysmon + Winlogbeat) → Winlogbeat → Elasticsearch → Kibana
+
+- Windows 10 VM: Endpoint with Sysmon installed for enhanced logging
+- Winlogbeat: Ships Windows event logs to Elasticsearch in near real time  
+- Elasticsearch: Stores and indexes all log data
+- Kibana: SIEM dashboard for searching logs and managing detection rules
+- Network: All VMs on bridged adapter — Ubuntu SIEM accessible at 192.168.1.36
 ---
 
 ## Detection Rules Built
